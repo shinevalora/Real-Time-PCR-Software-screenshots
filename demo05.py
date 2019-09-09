@@ -12,12 +12,13 @@ def screenshots():
 
     # path2=os.makedirs('data1',exist_ok=True)
 
+    num=int(input('请输入你想要截多少张图:'))
 
-    for i in range(1,13):
+    for i in range(1,num+1):
 
         your_choice = int(input("{1:'NTC',2:'WT',3:'MU',4:'HET'}:"))
 
-        # #(left, upper, right, lower)-tuple
+        # #bbox(left, upper, right, lower)-tuple
         img = ImageGrab.grab(bbox=(238, 320, 842, 725))
 
         draw = ImageDraw.Draw(img)
@@ -25,7 +26,7 @@ def screenshots():
         draw.text((120, 80), text[your_choice-1], fill=(0, 0, 0), font=ttfont, align='left')
 
 
-        img.save(f'data/{i}_{text[your_choice-1]}.jpg')
+        img.save(f'data4/{i}_{text[your_choice-1]}.jpg')
 
 
 # screenshots()
@@ -55,7 +56,7 @@ def image_compose():
 
     import os
 
-    image_path = 'data/'  # 图片集地址
+    image_path = 'data4/'  # 图片集地址
 
     image_row = 2  # 图片间隔，也就是合并成一张图后，一共有几行
     image_column = 2  # 图片间隔，也就是合并成一张图后，一共有几列
@@ -81,7 +82,9 @@ def image_compose():
             # print('from_image:',from_image)
             to_image.paste(from_image, ((x - 1) * image_height, (y - 1) * image_width))
 
-    return to_image.save("result_smooth_white_4.jpg")  # 保存新图
+    # print('image_names[image_column * y + x ]:', image_names[image_column * y + x])
+
+    return to_image.save(f"{image_names[image_column * y + x]}")  # 保存新图
 
 
 image_compose()
