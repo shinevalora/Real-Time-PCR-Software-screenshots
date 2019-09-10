@@ -35,7 +35,7 @@ def screenshots(bbox=(238, 320, 842, 725)):
             logging.info(f'Image/{i}_{text[your_choice - 1]}.jpg 保存成功！')
 
         except:
-            logging.info('你输入有误，请重新输入')
+            logging.info('你输入有误，程序终止！')
             exit()
 
 
