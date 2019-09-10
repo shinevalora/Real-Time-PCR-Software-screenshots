@@ -36,6 +36,7 @@ def screenshots(bbox=(238, 320, 842, 725)):
 
         except:
             logging.info('你输入有误，请重新输入')
+            exit()
 
 
 screenshots()
