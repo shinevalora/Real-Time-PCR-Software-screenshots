@@ -3,7 +3,6 @@
 #  创建时间: 2019/9/8  20:13
 
 import logging
-from screenshots import Image
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)-8s: %(message)s")
 
