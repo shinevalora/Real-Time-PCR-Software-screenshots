@@ -56,7 +56,7 @@ def image_compose():
 
             cv2.imwrite(f"{Image_save}/compose_{i}_{i + 1}_{i + 2}_{i + 3}.jpg", hebing)
 
-            logging.info(f"{Image_save}/compose_{i}_{i + 1}_{i + 2}_{i + 3}.jpg  拼接并保存成功！\n")
+            logging.info(f"{Image_save}/compose_{i}_{i + 1}_{i + 2}_{i + 3}.jpg  拼接并保存成功！\n\n")
 
         logging.info(f"共合成 {int(num / 4)} 个 两行两列的 .jpg 图片\n")
 
