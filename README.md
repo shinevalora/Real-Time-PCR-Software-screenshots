@@ -30,11 +30,6 @@
     </tr>
   
 </table>
-|版本号|安装方法|
-|------|--------|
-|python3.6|pip install requirements36.txt|
-|python3.7|pip install requirements37.txt|
-
 
 ## **目录对应说明**
 ![1.png-49.4kB][1]
