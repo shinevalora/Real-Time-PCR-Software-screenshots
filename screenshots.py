@@ -8,6 +8,8 @@ import os
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)-8s: %(message)s")
 
 Image = 'Image'
+if not os.path.exists(Image):
+	os.makedirs(Image)
 
 
 def screenshots(bbox=(238, 320, 842, 725)):
@@ -22,8 +24,7 @@ def screenshots(bbox=(238, 320, 842, 725)):
     end_num = int(input('请输入你想要截多少张图:'))
     start_num = int(input('请输入截图图片的起始数：1-则是从 1_*.jpg   , 2 -则是从 2_*.jpg开始:'))
 
-    if not os.path.exists(Image):
-        os.makedirs(Image)
+
 
     for i in range(start_num, start_num + end_num):
         try:
