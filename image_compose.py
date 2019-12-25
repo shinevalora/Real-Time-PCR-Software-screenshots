@@ -3,21 +3,21 @@
 #  创建时间: 2019/9/8  20:13
 
 import logging
+import os
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)-8s: %(message)s")
 
 Img, Image_save = 'Img', 'Image_save'
 
 if not os.path.exists(Img):
-	os.makedirs(Img)
+    os.makedirs(Img)
 
 if not os.path.exists(Image_save):
-	os.makedirs(Image_save)
+    os.makedirs(Image_save)
 
-	
+
 # 定义图像拼接函数
 def image_compose():
-    import os
     import glob
 
     import cv2
