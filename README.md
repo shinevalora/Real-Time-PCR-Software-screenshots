@@ -15,6 +15,21 @@
 
 ## **依赖库**
 <li> 项目依赖
+<table>
+    <tr>
+        <th>  版本号  </th>
+        <th>  安装方法  </th>
+    </tr>
+    <tr>
+        <td>  python3.6  </th>
+        <td>  pip install requirements36.txt  </th>
+    </tr>
+    <tr>
+        <td>  python3.7  </th>
+        <td>  pip install requirements37.txt  </th>
+    </tr>
+  
+</table>
 |版本号|安装方法|
 |------|--------|
 |python3.6|pip install requirements36.txt|
