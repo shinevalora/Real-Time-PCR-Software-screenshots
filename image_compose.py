@@ -3,12 +3,19 @@
 #  创建时间: 2019/9/8  20:13
 
 import logging
+from screenshots import Image
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)-8s: %(message)s")
 
 Img, Image_save = 'Img', 'Image_save'
 
+if not os.path.exists(Img):
+	os.makedirs(Img)
 
+if not os.path.exists(Image_save):
+	os.makedirs(Image_save)
+
+	
 # 定义图像拼接函数
 def image_compose():
     import os
@@ -19,12 +26,6 @@ def image_compose():
 
     num = len(os.listdir('Image/'))
     # print(num)
-
-    if not os.path.exists(Img):
-        os.makedirs(Img)
-
-    if not os.path.exists(Image_save):
-        os.makedirs(Image_save)
 
     if num % 4 == 0:
 
