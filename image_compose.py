@@ -3,9 +3,6 @@
 #  创建时间: 2019/9/8  20:13
 
 import logging
-import os
-
-from screenshots import Image
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)-8s: %(message)s")
 
@@ -31,22 +28,21 @@ def image_compose():
 
     if num % 4 == 0:
 
-        logging.info(f"Image 文件夹下的 .jpg 图片格式的文件共有 {num} 个")
-        logging.info(f"共合成 {num / 4} 个 两行两列的 '.jpg' 图片\n")
+        logging.info(f"Image 文件夹下的 .jpg 图片格式的文件共有 {num} 个\n")
 
         for i in range(1, num + 1, 4):
-            logging.info(f"准备读取并合并{glob.glob(f'{Image}/{i}_*.jpg')[0]}")
-            logging.info(f"准备读取并合并{glob.glob(f'{Image}/{i + 1}_*.jpg')[0]}")
-            logging.info(f"准备读取并合并{glob.glob(f'{Image}/{i + 2}_*.jpg')[0]}")
-            logging.info(f"准备读取并合并{glob.glob(f'{Image}/{i + 3}_*.jpg')[0]}")
+            logging.info(f"准备读取并合并{glob.glob(f'Image/{i}_*.jpg')[0]}")
+            logging.info(f"准备读取并合并{glob.glob(f'Image/{i + 1}_*.jpg')[0]}")
+            logging.info(f"准备读取并合并{glob.glob(f'Image/{i + 2}_*.jpg')[0]}")
+            logging.info(f"准备读取并合并{glob.glob(f'Image/{i + 3}_*.jpg')[0]}")
 
-            img1 = cv2.imread(glob.glob(f'{Image}/{i}_*.jpg')[0])
-            img2 = cv2.imread(glob.glob(f'{Image}/{i + 1}_*.jpg')[0])
+            img1 = cv2.imread(glob.glob(f'Image/{i}_*.jpg')[0])
+            img2 = cv2.imread(glob.glob(f'Image/{i + 1}_*.jpg')[0])
 
             heng1 = np.hstack((img1, img2))
 
-            img3 = cv2.imread(glob.glob(f'{Image}/{i + 2}_*.jpg')[0])
-            img4 = cv2.imread(glob.glob(f'{Image}/{i + 3}_*.jpg')[0])
+            img3 = cv2.imread(glob.glob(f'Image/{i + 2}_*.jpg')[0])
+            img4 = cv2.imread(glob.glob(f'Image/{i + 3}_*.jpg')[0])
 
             heng2 = np.hstack((img3, img4))
 
@@ -61,8 +57,11 @@ def image_compose():
             cv2.imwrite(f"{Image_save}/compose_{i}_{i + 1}_{i + 2}_{i + 3}.jpg", hebing)
 
             logging.info(f"{Image_save}/compose_{i}_{i + 1}_{i + 2}_{i + 3}.jpg  拼接并保存成功！\n")
+
+        logging.info(f"共合成 {int(num / 4)} 个 两行两列的 .jpg 图片\n")
+
     else:
-        logging.info(f"{Image} 文件夹下的 .jpg 图片格式的文件个数必须为4的倍数")
+        logging.info(f"Image 文件夹下的 .jpg 图片格式的文件个数必须为4的倍数")
         exit()
 
 
