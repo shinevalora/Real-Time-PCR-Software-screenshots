@@ -22,11 +22,11 @@
     </tr>
     <tr>
         <td>  python3.6  </th>
-        <td>  pip install requirements36.txt  </th>
+        <td>  pip install -r requirements36.txt  </th>
     </tr>
     <tr>
         <td>  python3.7  </th>
-        <td>  pip install requirements37.txt  </th>
+        <td>  pip install -r requirements37.txt  </th>
     </tr>
   
 </table>
